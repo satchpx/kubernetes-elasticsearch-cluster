@@ -52,7 +52,7 @@ spec:
         - name: HTTP_ENABLE
           value: "false"
         - name: ES_JAVA_OPTS
-          value: -Xms256m -Xmx256m
+          value: -Xms1024m -Xmx1024m
         - name: PROCESSORS
           valueFrom:
             resourceFieldRef:
@@ -61,7 +61,7 @@ spec:
           requests:
             cpu: 0.25
           limits:
-            cpu: 1
+            cpu: 2
         ports:
         - containerPort: 9300
           name: transport
@@ -77,8 +77,8 @@ spec:
   - metadata:
       name: storage
     spec:
-      storageClassName: standard
+      storageClassName: px-high-rf2
       accessModes: [ ReadWriteOnce ]
       resources:
         requests:
-          storage: 2Gi
+          storage: 50Gi

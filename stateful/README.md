@@ -10,6 +10,8 @@ The [`es-data-stateful.yaml`](es-data-stateful.yaml) and [`es-master-stateful.ya
 The root directory contains instructions for deploying elasticsearch using a `Deployment` with transient storage for data pods. These brief instructions show a deployment using the `StatefulSet` and `StorageClass`.
 
 ```
+kubectl create -f px-sc-high-rf2.yaml
+
 kubectl create -f ../es-discovery-svc.yaml
 kubectl create -f ../es-svc.yaml
 
